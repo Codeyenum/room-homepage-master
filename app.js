@@ -7,42 +7,31 @@ for (let button of menuButtons) {
 }
 
 const sliderButtons = document.querySelectorAll(".slider-button");
-const slides = document.querySelectorAll(".hero-image-container > img");
-const slideContents = document.querySelectorAll(".hero-content");
+const slideImages = document.querySelectorAll(".hero-image-container > img");
+const slideTexts = document.querySelectorAll(".hero-content");
 
 let currentSlide = 0;
 
-for (let button of sliderButtons) {
-    button.addEventListener("click", () => {
-        if (button.classList.contains("previous")) {
-            previousSlide()
-        } else {
-            nextSlide()
-        }
-    })
-}
+const previousButton = document.querySelector(".previous");
+const nextButton = document.querySelector(".next");
 
-function previousSlide() {
+previousButton.addEventListener("click", () => {
     if (currentSlide > 0) {
         currentSlide--;
-        slides.forEach((slide) => {
-            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
-        });
-        slideContents.forEach((content) => {
-            content.style.transform = `translateX(-${currentSlide * 100}%)`;
-        });
+        slideImages.forEach(moveToCurrent)
+        slideTexts.forEach(moveToCurrent)
     }
-}
+})
 
-function nextSlide() {
+nextButton.addEventListener("click", () => {
     if (currentSlide < 2) {
         currentSlide++;
-        slides.forEach((slide) => {
-            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
-        });
-        slideContents.forEach((content) => {
-            content.style.transform = `translateX(-${currentSlide * 100}%)`;
-        });
+        slideImages.forEach(moveToCurrent)
+        slideTexts.forEach(moveToCurrent)
     }
+})
 
+function moveToCurrent(item) {
+    item.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
+
