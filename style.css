@@ -97,7 +97,7 @@ body {
 }
 
 .hero-image-container img {
-    min-width: 100vw;
+    min-width: 100%;
     object-fit: fill;  
     transition: all .65s ease-in-out;
 }
@@ -120,8 +120,7 @@ body {
     background-color: var(--light-box);
 }
 
-.slider-button img { 
-    min-width: unset;   
+.slider-button img {      
     width: 10px;
 }
 
@@ -132,7 +131,7 @@ body {
 
 .hero-content,
 .about-content {
-    min-width: 100vw;
+    min-width: 100%;
     padding: 3.5rem 1.5rem;
     transition: all .65s ease-in-out;
 }
