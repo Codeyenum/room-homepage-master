@@ -1,0 +1,182 @@
+:root {
+    /* Colors */
+    --text-color: hsla(0, 0%, 63%, 0.85);
+    --heading-color: hsl(0, 0%, 0%);
+    --bg-color: hsl(0, 0%, 100%);
+    --light-box: hsl(0, 0%, 27%);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    height: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'League Spartan', sans-serif;
+    padding-bottom: .75rem;
+    position: relative;
+}
+
+.header img {
+    cursor: pointer;    
+}
+
+.mobile-nav,
+.mobile-nav-active {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    transition: left 1.5s cubic-bezier(0.43, -0.09, 0.27, 1.55);
+}
+
+.mobile-nav a{
+    color: var(--bg-color);    
+    font-size: 1.75rem;
+    margin: auto;
+}
+
+.mobile-nav-active {   
+    gap: 4.5rem; 
+    background-color: var(--bg-color);
+}
+
+.active-nav {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+.active-nav a {    
+    color: var(--heading-color);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.05;
+    text-transform: lowercase;
+}
+
+.hide {
+    left: -100%;
+    transition: left 1s ease-in;
+}
+
+.hero-image-container {        
+    display: flex;
+    height: 56.5vh;    
+    overflow-x: hidden;
+    position: relative;
+}
+
+.hero-image-container img {
+    min-width: 100vw;
+    object-fit: fill;  
+    transition: all .65s ease-in-out;
+}
+
+.slider-control {   
+    background-color: var(--heading-color); 
+    display: flex;
+    position: absolute;  
+    bottom: 0;  
+    right: 0;
+}
+
+.slider-button {
+    background-color: var(--heading-color);
+    cursor: pointer;
+    padding: 1.25rem 1.5rem;
+}
+
+.slider-button:hover, .slider-button:active {    
+    background-color: var(--light-box);
+}
+
+.slider-button img { 
+    min-width: unset;   
+    width: 10px;
+}
+
+.hero-content-container {
+    display: flex;       
+    overflow-x: hidden;    
+}
+
+.hero-content,
+.about-content {
+    min-width: 100vw;
+    padding: 3.5rem 1.5rem;
+    transition: all .65s ease-in-out;
+}
+
+.hero-content h2 {
+    font-size: 2.35rem;
+    line-height: 2.35rem;
+}
+
+.hero-content p,
+.about-content p {
+    color: var(--text-color);
+    line-height: 1.4rem;
+    margin: 1rem 0 0;
+}
+
+.shop-now-link {
+    display: flex;
+    align-items: stretch;
+    color: var(--heading-color);
+    font-size: .95rem;
+    font-weight: 600;
+    gap: 1rem;
+    letter-spacing: .85rem;
+    margin: 2.5rem 0 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.about-content {
+    padding: 3rem 1.5rem 2.35rem;
+}
+
+.about-content h3 {
+    font-size: .85rem;
+    letter-spacing: .4rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100%;
+}
